@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #89f7fe, #66a6ff);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-card {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            padding: 30px;
+            position: relative;
+        }
+
+        .profile-image {
+            position: absolute;
+            top: -40px;
+            right: 30px;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border: 3px solid white;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-card h2 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .profile-card p {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="profile-card">
+    {% if user.image %}
+        <img src="{{ url_for('static', filename='uploads/' + user.image) }}" alt="Profile Image" class="profile-image">
+    {% endif %}
+    <h2>{{ user.name }}</h2>
+    <p><strong>Username:</strong> {{ user.username }}</p>
+    <p><strong>Age:</strong> {{ age }}</p>
+    <p><strong>Address:</strong> {{ user.address }}</p>
+</div>
+
+</body>
+</html>

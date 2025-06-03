@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+        }
+
+        .container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;  /* align bottom */
+            height: 100vh;
+            padding-right: 50px;
+            padding-bottom: 30px;
+        }
+
+        .register-box {
+            background-color: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+
+        .register-box h2 {
+            margin-bottom: 20px;
+        }
+
+        .register-box input[type="text"],
+        .register-box input[type="date"],
+        .register-box input[type="password"],
+        .register-box input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .register-box button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .register-box a {
+            display: block;
+            margin-top: 10px;
+            text-align: center;
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .register-box a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="register-box">
+        <h2>Register</h2>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="date" name="birthday" required>
+            <input type="text" name="address" placeholder="Address" required>
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="file" name="image" accept="image/*">
+            <button type="submit">Register</button>
+            <a href="{{ url_for('login') }}">Already have an account? Login</a>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
