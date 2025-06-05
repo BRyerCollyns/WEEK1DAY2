@@ -76,7 +76,6 @@ def login():
                 'name': user.name,
                 'birthday': user.birthday,
                 'address': user.address,
-                'username': user.username,
                 'image': user.image
             }
             return redirect(url_for('profile'))
